@@ -1,3 +1,4 @@
+
 //Selectors
 const todoInput =document.querySelector('.todo-input');
 const todoButton =document.querySelector('.todo-button');
@@ -22,7 +23,14 @@ function addTodo(event){
     const newtodo = document.createElement('li');
     newtodo.innerText=todoInput.value;
     newtodo.classList.add('todo-item');
+    task = document.getElementsByClassName("todo-input").value;
+    time = document.getElementsByClassName("sd").value;
+    firebaseConfig.database().ref("/").update({
+            Task : task ,
+            Time : time
+    });
     todoDiv.appendChild(newtodo);
+    
     //CHECK MARK BUTTON
     const completedButton = document.createElement('button');
     completedButton.innerHTML='<i class="fas fa-check"></i>';
