@@ -1,0 +1,60 @@
+.tek-date-container {
+    position: relative;
+    float: left;
+   }
+  
+  .tek-input {
+     border: 1px solid #cacaca;
+     padding: 3px 10px;
+    height: 30px;
+    width:  280px;
+  
+   }
+  
+  .tek-btn-date{
+   position: absolute;
+  top: 10px;
+  right: 8px;
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  pointer-events: none;
+  }
+  
+  .tek-btn-date button {
+   border: none;
+   background: transparent;
+  }
+  
+  .tek-cal-icon{
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 100%;
+    border: none;
+   background: transparent;
+  
+  }
+  .tek-calendar-img {
+     width: 20px;
+   }
+  .tek-date-input-box {
+     font-family: "Roboto",sans-serif !important;
+    border-radius: 5px;
+    font-size: 14px;
+    border: none !important;
+    padding: 5px;
+    outline: none;
+    font-size: 14px;
+    background: none;
+    box-shadow: none;
+  }
+  
+  .tek-flow-modal-date-picker {
+     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #cacaca;
+    border-radius: 3px;
+   }
