@@ -9,8 +9,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha512-9BwLAVqqt6oFdXohPLuNHxhx36BVj5uGSGmizkmGkgl3uMSgNalKc/smum+GJU/TTP0jy0+ruwC3xNAk3F759A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="./style.css">
-
     <title>Todo App</title>
+    <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-auth.js"></script>
+<script src="https://mdg-todolist-default-rtdb.asia-southeast1.firebasedatabase.app/Task"></script>
 </head>
 <body>
     <header>
@@ -42,34 +45,33 @@
 
 
     <script src="./app.js"></script>
-</body>
-<script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-database.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-auth.js"></script>
-<script src="https://mdg-todolist-default-rtdb.asia-southeast1.firebasedatabase.app/Task"></script>
-<script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js";
-    import { getDatabase } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-database.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-  
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-      apiKey: "AIzaSyDGqiUYXLc1kh4_FlFVkHYnFaToOcTzYXI",
-      authDomain: "mdg-todolist.firebaseapp.com",
-      projectId: "mdg-todolist",
-      storageBucket: "mdg-todolist.appspot.com",
-      messagingSenderId: "1058189897574",
-      appId: "1:1058189897574:web:b97e2b48afde987fdaa2a7",
-      measurementId: "G-YS2C9MVT2H"
-    };
-  
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    let database = getDatabase(app);
+    
 
-    export {databse , app};
-  </script>
+    <script type="module">
+         // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDGqiUYXLc1kh4_FlFVkHYnFaToOcTzYXI",
+  authDomain: "mdg-todolist.firebaseapp.com",
+  databaseURL: "https://mdg-todolist-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "mdg-todolist",
+  storageBucket: "mdg-todolist.appspot.com",
+  messagingSenderId: "1058189897574",
+  appId: "1:1058189897574:web:b97e2b48afde987fdaa2a7",
+  measurementId: "G-YS2C9MVT2H"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+let database=getDatabase(app);
+export{database,app};
+    </script>
+   
+</body>
 </html>

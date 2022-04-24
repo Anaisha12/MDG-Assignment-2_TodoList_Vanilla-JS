@@ -25,11 +25,17 @@ function addTodo(event){
     newtodo.classList.add('todo-item');
     task = document.getElementsByClassName("todo-input").value;
     time = document.getElementsByClassName("sd").value;
-    database().ref("/").update({
-            Task : task ,
-            Time : time
-    });
+   
+    
+    // database().ref("/").update({
+    //         Task : task ,
+    //         Time : time
+    // });
     todoDiv.appendChild(newtodo);
+    var firebaseref =firebase.database().ref('tasks');
+    firebaseref.push(task);
+    var firebaseref1 =firebase.database().ref('time');
+    firebaseref1.push(time);
     
     //CHECK MARK BUTTON
     const completedButton = document.createElement('button');
