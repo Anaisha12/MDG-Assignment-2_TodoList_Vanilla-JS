@@ -25,7 +25,7 @@ function addTodo(event){
     newtodo.classList.add('todo-item');
     task = document.getElementsByClassName("todo-input").value;
     time = document.getElementsByClassName("sd").value;
-    firebaseConfig.database().ref("/").update({
+    database().ref("/").update({
             Task : task ,
             Time : time
     });
@@ -72,11 +72,14 @@ function filterTodo(e){
     todos.forEach(function(todo){
         switch(e.target.value){
             case "all":
-                todo.style.display = "flex";
+                if(!todo.classList.contains("completed") && !todo.classList.contains("ucompleted"))
+                todo.style.display = "value";
+                else
+                todo.style.display = "value";
                 break;
             case "completed":
                 if(todo.classList.contains('completed')){
-                    todo.style.display = "flex";
+                    todo.style.display ="value";
                 }
                 else{
                     todo.style.display = "none";
@@ -84,7 +87,7 @@ function filterTodo(e){
                 break;
             case "uncompleted":
                 if(!todo.classList.contains('completed')){
-                    todo.style.display = "flex";
+                    todo.style.display = "value";
                 }
                 else{
                     todo.style.display = "none";
@@ -95,7 +98,3 @@ function filterTodo(e){
 
 }
 
-function datepicker(e)
-{
-
-}

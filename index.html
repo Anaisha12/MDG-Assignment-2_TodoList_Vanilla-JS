@@ -27,9 +27,9 @@
           </div>
         <div class="select">
             <select name="todos" class="filter-todo">
-                <option value="all">All</option>
-                <option value="completed">Completed</option>
-                <option value="uncompleted">Uncompleted</option>
+                <option class="all" value="all">All</option>
+                <option class="completed" value="completed">Completed</option>
+                <option class="uncompleted" value="uncompleted">Uncompleted</option>
             </select>
         </div>
     </form>
@@ -68,5 +68,8 @@
   
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
+    let database = getDatabase(app);
+
+    export {databse , app};
   </script>
 </html>
