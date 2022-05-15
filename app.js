@@ -27,7 +27,8 @@
       newtodo.classList.add('todo-item');
       task = document.getElementsByClassName("todo-input").value;
       time = document.getElementsByClassName("sd").value;
-      
+      firebaseRef.set(task);
+      firebaseRef.set(time);
       
       
       // database().ref("/").update({
